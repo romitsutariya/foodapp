@@ -1,5 +1,5 @@
 var  balance;
-var URL="http://localhost:3000";
+var URL="ec2-18-224-215-235.us-east-2.compute.amazonaws.com:3000";
 $(document).ready(function(){
     fnLoadAvailableBalane();
     setDate();
