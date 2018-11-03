@@ -1,4 +1,5 @@
 var  balance;
+var URL="http://localhost:3000";
 $(document).ready(function(){
     fnLoadAvailableBalane();
     setDate();
@@ -6,7 +7,7 @@ $(document).ready(function(){
 
 function fnLoadAvailableBalane()
 {
-    $.get("http://localhost:3000/balance", function(data){
+    $.get(URL+"/balance", function(data){
         balance=data.amount;
         $("#blnc").html(`Rs.${data.amount}`);
       });
@@ -37,7 +38,7 @@ function sendData()
             });
     if(validation_form(user.length))
     {
-    $.post("http://localhost:3000",
+    $.post(URL,
     {
         amount: $("#amount").val(),
         balance : balance,
