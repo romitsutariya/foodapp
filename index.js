@@ -13,19 +13,33 @@ app.use(express.static("public/"));
     res.sendFile(__dirname+"/index.html");
  })
  app.get('/balance', function (req, res) {
-    res.json({balance : Math.round(Math.random()*1000)});
- })
- app.post('/', function (req, res) {
-    MongoClient.connect(URL, function(err, db) {
+    MongoClient.connect(URL, { useNewUrlParser: true },function(err, db) {
         if (err) throw err;
         var dbo = db.db("k501");
+        dbo.collection("balance").findOne({}, function(err, result) {
+            if (err) throw err;
+            res.send(result);
+            db.close();
+          });
+      });
+ })
+ app.post('/', function (req, res) {
+     console.log(req.body);
+     req.body.balance = (parseInt(req.body.balance)-parseInt(req.body.amount));
+    MongoClient.connect(URL, { useNewUrlParser: true },function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("k501");
+         dbo.collection("balance").updateOne({ u:'101' }, { $set: {amount:req.body.balance} }, function(err, res) {
+         if (err) throw err;
+         console.log("1 document updated");
+         });
          dbo.collection("food").insertOne(req.body, function(err, res) {
           if (err) throw err;
           console.log("1 document inserted");
           db.close();
         });
       });
-      res.send("success");
+      res.send(req.body.balance+"");
  })
 
 var server = app.listen(3000, function () {

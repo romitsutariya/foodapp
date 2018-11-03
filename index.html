@@ -20,7 +20,7 @@
         <h1 class="text-center"><span class="badge badge-success" id="blnc"></span></h1>
     </div>
     <div class="container">
-        <form>
+        <form id="myform">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-rupee-sign"></i></span>
@@ -43,7 +43,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-utensils"></i></span>
                 </div>
-                <select class="form-control" id="sel1" name="meal">
+                <select class="form-control" id="meal" name="meal">
                     <option value="-1">Select</option>
                     <option value="snack">Snack</option>
                     <option value="lunch">Lunch</option>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             <div class="text-center">
-                    <button type="submit" class="btn btn-primary ">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="sendData()">Submit</button>
             </div>
            
         </form>
