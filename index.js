@@ -19,11 +19,9 @@ app.use(express.static("public/"));
 
 
  //this is  for loading balance
- app.get('/balance', function (req, res) {
-    
- })
 
- 
+
+
  //this is for handling  post request
  app.post('/', function (req, res) {
      console.log(req.body);
