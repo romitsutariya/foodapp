@@ -25,7 +25,16 @@ app.use(express.static("public/"));
  //this is for handling  post request
  app.post('/', function (req, res) {
      console.log(req.body);
-     res.json({"message": "success"});
+     MongoClient.connect(URL, { useNewUrlParser: true },function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("k501");
+        dbo.collection("food").insertOne(req.body, function(err, result) {
+            if (err) throw err;
+            res.json({"message":result.insertedCount==1? "suceess":"fail"});
+            db.close();
+          });
+      });
+    
 
  })
 
