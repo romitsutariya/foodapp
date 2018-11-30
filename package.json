@@ -15,5 +15,12 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongodb": "^3.1.10"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romitsutariya/foodapp.git"
   }
 }
