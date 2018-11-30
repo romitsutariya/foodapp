@@ -7,9 +7,9 @@ var app = express();
 //this  uel for  connectin mango
 const URL="mongodb://romit:romit123@ds227469.mlab.com:27469/k501"
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static("public/"));
 
  //this is for  loading first page   
@@ -25,6 +25,8 @@ app.use(express.static("public/"));
  //this is for handling  post request
  app.post('/', function (req, res) {
      console.log(req.body);
+     res.json({"message": "success"});
+
  })
 
 

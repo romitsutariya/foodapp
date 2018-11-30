@@ -5,6 +5,11 @@
     <title>K501</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- default favicon -->
+   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- wideley used favicon -->
+     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
         crossorigin="anonymous">
@@ -52,16 +57,17 @@
             </div>
             <!-- starting  checkbox -->
             <div class="row">
+                   
                 <div class="col"><div class="form-check-inline">
                         <label class="form-check-label">
-                            <input type="checkbox"  name="name" class="form-check-input" value="romit">Romit
+                            <input type="checkbox" id="name" name="name" class="form-check-input" value="romit">Romit
                         </label>
                     </div>
                 </div>
                 <div class="col">
                         <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="checkbox"  name="name" class="form-check-input" value="darshan">Darshan
+                                    <input type="checkbox"  id="name" name="name" class="form-check-input" value="darshan">Darshan
                                 </label>
                             </div>
                 </div>
@@ -70,20 +76,20 @@
                     <div class="col">
                             <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="checkbox" name="name" class="form-check-input" value="vishal">Vishal
+                                        <input type="checkbox"  id="name" name="name" class="form-check-input" value="vishal">Vishal
                                     </label>
                                 </div>
                     </div>
                     <div class="col">
                             <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="checkbox" name="name" class="form-check-input" value="hardik">Hardik
+                                        <input type="checkbox" id="name" name="name" class="form-check-input" value="hardik">Hardik
                                     </label>
                                 </div>
                     </div>
                 </div>
             <div class="text-center">
-                    <button type="button" class="btn btn-primary" onclick="sendData()">Submit</button>
+                    <button id="btn" type="button" class="btn btn-primary">Submit</button>
             </div>
            
         </form>
