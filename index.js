@@ -5,7 +5,8 @@ var MongoClient = require('mongodb').MongoClient;
 var app = express();
 
 //this  uel for  connectin mango
-const URL="mongodb://romit:romit123@ds227469.mlab.com:27469/k501"
+//const URL="mongodb://romit:romit123@ds227469.mlab.com:27469/k501"
+const URL="mongodb://romit:romit123@ds141428.mlab.com:41428/k501"
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
