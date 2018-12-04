@@ -62,6 +62,11 @@ function validation(data){
         alert("Please Select Geeks");
         return false;
     }
+    else if(data.userName=="")
+    {
+        alert("Please Select UserName");
+        return false;
+    }
      return true;    
 }
 function getData()
@@ -70,7 +75,8 @@ function getData()
         amount: $('#amount').val(),
         date: $('#date').val(),
         place: $('#place').val(),
-        meal:$('#meal').val()
+        meal:$('#meal').val(),
+        userName:$('#userName').val()
     }
     var names = [];
     $('input[name="name"]:checked').each(function() {
@@ -86,6 +92,7 @@ function clearFiled()
      $("#amount").val(""),
      $("#place").val(""),
      $("#meal").val("")
+     userName:$('#userName').val("")
      $('#meal option[value="-1"]').attr("selected", "selected");
     
      $( "input[type='checkbox']" ).each(function() {
